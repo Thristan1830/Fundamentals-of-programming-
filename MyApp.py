@@ -16,7 +16,7 @@ def required_grades(target, prelim):
 def main():
     st.title("Student Grade Calculator")
 
-    absences = st.slider("Enter the number of absences:", min_value=0, max_value=100, step=1)
+    absences = st.number_input("Enter the number of absences:", min_value=0, max_value=100, step=1)
 
     if absences >= 4:
         st.error("FAILED, TOO MANY ABSENCES")
