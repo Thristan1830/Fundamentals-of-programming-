@@ -16,17 +16,17 @@ def required_grades(target, prelim):
 def main():
     st.title("Student Grade Calculator")
 
-    absences = st.number_input("Enter the number of absences:", min_value=0, max_value=100, step=1)
+    absences = st.slider("Enter the number of absences:", min_value=0, max_value=100, step=1)
 
     if absences >= 4:
         st.error("FAILED, TOO MANY ABSENCES")
         return
     
     st.subheader("Enter Your Grades")
-    Prelim_exam = st.slider("Prelim Exam grade", 0.0, 100.0, 75.0)
-    Quizzes = st.slider("Quizzes grade", 0.0, 100.0, 75.0)
-    Requirements = st.slider("Requirements grade", 0.0, 100.0, 75.0)
-    Recitation = st.slider("Recitation grade", 0.0, 100.0, 75.0)
+    Prelim_exam = st.number_input("Prelim Exam grade", 0.0, 100.0, 75.0)
+    Quizzes = st.number_input("Quizzes grade", 0.0, 100.0, 75.0)
+    Requirements = st.number_input("Requirements grade", 0.0, 100.0, 75.0)
+    Recitation = st.number_input("Recitation grade", 0.0, 100.0, 75.0)
 
     if st.button("Calculate"):
         attendance = max(0, 100 - (absences * 10))
